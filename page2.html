@@ -2,42 +2,91 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Ecotroca</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecotroca - Cadastro</title>
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
   <div class="container">
-
-  <!-- LADO DIREITO -->
-    <div class="card cadastro">
-      <img src="assets/logo.png" alt="Ecotroca" class="logo">
+    <div class="card">
+      <img src="img/ecotroca.jpeg" alt="Ecotroca" class="logo">
 
       <h3>Não possui Autenticação Institucional?</h3>
-      <p>Informe seus dados acadêmicos para melhor experiência.</p>
+      <p>Informe seus dados acadêmicos para a melhor experiência possível.</p>
 
-      <div class="radio-group">
-        <label><input type="radio" name="tipo"> Estudante</label>
-        <label><input type="radio" name="tipo"> Formado</label>
-      </div>
+      <form id="form-cadastro">
+        <div class="radio-group">
+          <label class="radio-container">
+            <input type="radio" name="tipo" checked required>
+            <span class="checkmark"></span>
+            Estudante
+          </label>
+          <label class="radio-container">
+            <input type="radio" name="tipo">
+            <span class="checkmark"></span>
+            Formado
+          </label>
+        </div>
 
-      <input type="text" placeholder="CPF">
-      <input type="email" placeholder="Email">
-      <input type="text" placeholder="Nome completo">
+        <input type="text" placeholder="CPF" inputmode="numeric" required>
+        <input type="email" id="user_email" placeholder="Email" required>
+        <input type="text" placeholder="Nome completo" required>
 
-      <div class="row">
-        <input type="text" placeholder="Estado">
-        <input type="text" placeholder="Cidade">
-      </div>
+        <div class="row">
+          <input type="text" placeholder="Estado" required>
+          <input type="text" placeholder="Cidade" required>
+        </div>
 
-      <input type="text" placeholder="Instituição de Ensino">
-      <input type="text" placeholder="Curso Acadêmico">
+        <input type="text" placeholder="Instituição de Ensino" required>
+        <input type="text" placeholder="Curso acadêmico" required>
 
-      <button class="btn green">Enviar</button>
+        <p class="anexo-texto">Por favor envie seu comprovante de matrícula ou histórico escolar:</p>
+
+        <div class="anexo-box">
+          <label for="anexo" class="anexo-btn">ANEXO</label>
+          <input type="file" id="anexo" hidden>
+          <span class="icon-link">🔗</span>
+        </div>
+
+        <button type="submit" id="btn-enviar" class="btn">ENVIAR</button>
+        <a href="index.html" class="btn btn-voltar">Voltar para o Login</a>
+      </form>
     </div>
-
   </div>
-    
 
+  <script type="text/javascript">
+    (function(){
+      // Chave Pública da conta oficial ecotrocacontato@gmail.com
+      emailjs.init("0zHgzhq7wqUiwAzZI"); 
+    })();
+
+    document.getElementById('form-cadastro').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const btn = document.getElementById('btn-enviar');
+      btn.innerText = 'ENVIANDO...';
+      btn.disabled = true;
+
+      const emailDigitado = document.getElementById('user_email').value;
+
+      const templateParams = {
+        to_email: emailDigitado 
+      };
+
+      // Service ID ATUALIZADO: service_bj7pij3
+      // Template ID ATUALIZADO: template_l8adt2k
+      emailjs.send('service_bj7pij3', 'template_l8adt2k', templateParams)
+        .then(function() {
+          window.location.href = "page3.html"; 
+        }, function(error) {
+          console.log("Erro detalhado:", error);
+          alert("Erro no envio. Verifique se clicou em SAVE no template do EmailJS.");
+          btn.innerText = 'ENVIAR';
+          btn.disabled = false;
+        });
+    });
+  </script>
 </body>
 </html>
