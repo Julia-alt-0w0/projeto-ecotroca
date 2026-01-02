@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecotroca - Sucesso</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sucesso-container">
+    <div class="sucesso-topo">
+      <div class="icone-capelo">🎓</div>
+      <div class="msg-sucesso">Seus dados foram enviados com sucesso!</div>
+      <h3>O que acontece agora?</h3>
+      <p>Nossa equipe irá analisar seus dados.</p>
+      <p>Você receberá uma notificação pelo seu email quando a validação for concluída.</p>
+      <p>O prazo para a análise ocorre de 7 a 15 dias corridos.</p>
+      <p>Caso algum documento precise de reajuste entraremos em contato por email.</p>
+    </div>
+
+    <div class="sucesso-rodape">
+      <h4>Dúvidas ou ajuda?</h4>
+      <p>Entre em contato conosco pelo email:<br>
+          <strong>ecotrocaajuda@gmail.com</strong></p>
+      <div class="coracao">💚</div>
+      <a href="index.html" class="btn">VOLTAR PARA O INÍCIO</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+  window.onload = function() {
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#127a7d', '#2e7d32', '#ffffff']
+    });
+  };
+</script>
+</body>
+</html>

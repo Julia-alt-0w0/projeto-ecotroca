@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecotroca - Chat</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="market-chat">
+
+      <aside class="seller-list">
+        
+        <div class="seller-item active">
+          <img src="img/matematica-livro.jpg" alt="Vendedor">
+          <div class="seller-info">
+            <div class="seller-top">
+              <strong>André Dias</strong>
+              <span class="chat-time">10:23</span>
+            </div>
+            <p>Consigo fazer por R$ 45,00</p>
+          </div>
+        </div>
+
+        <div class="seller-item">
+          <img src="img/livro-python.jpg" alt="Vendedor">
+          <div class="seller-info">
+            <div class="seller-top">
+              <strong>Carolina Lima</strong>
+              <span class="chat-time">09:34</span>
+            </div>
+            <p>Ótimo! Combinado.</p>
+          </div>
+        </div>
+
+      </aside>
+
+      <section class="chat-box">
+
+        <header class="chat-header">
+          <strong>André Dias</strong>
+          <span>Livro de Programação</span>
+        </header>
+
+        <div class="chat-messages">
+          <div class="msg sent">
+            Oi! O livro ainda está disponível?
+            <span class="msg-time">17:48 <span class="material-icons-outlined" style="font-size: 12px;">done_all</span></span>
+          </div>
+
+          <div class="msg received">
+            Oi! Está sim 😊
+            <span class="msg-time">17:52</span>
+          </div>
+
+          <div class="msg sent">
+            Qual o melhor valor?
+            <span class="msg-time">17:53 <span class="material-icons-outlined" style="font-size: 12px;">done_all</span></span>
+          </div>
+
+          <div class="msg received">
+            Consigo fazer por R$ 45,00
+            <span class="msg-time">17:55</span>
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <input type="text" placeholder="Escreva para o anunciante..." />
+          <button>
+            <span class="material-icons-outlined">send</span>
+          </button>
+        </div>
+
+      </section>
+
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="app.html" class="nav-item">
+        <span class="material-icons-outlined">home</span>
+        <span>Início</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="material-icons-outlined">search</span>
+        <span>Explorar</span>
+      </a>
+      <a href="chat.html" class="announce-btn">
+        <span class="material-icons-outlined">add</span>
+      </a>
+      <a href="#" class="nav-item active">
+        <span class="material-icons-outlined">chat_bubble_outline</span>
+        <span>Chat</span>
+      </a>
+      <a href="user.html" class="nav-item">
+        <span class="material-icons-outlined">person_outline</span>
+        <span>Perfil</span>
+      </a>
+    </nav>
+
+  </div>
+
+</body>
+</html>
