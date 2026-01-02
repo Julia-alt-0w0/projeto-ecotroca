@@ -684,11 +684,26 @@ body:has(.app) {
 
 
 /* ===== TELA DE PERFIL ===== */
+:root {
+  --primary-green: #00a650;
+  --text-dark: #333;
+  --text-light: #777;
+}
 
-.profile-screen {
+/* BASE */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: #f4f4f4;
 }
 
+.app {
+  max-width: 420px;
+  margin: 0 auto;
+  padding-bottom: 90px;
+}
+
+/* HEADER */
 .profile-header {
   background: var(--primary-green);
   color: #fff;
@@ -706,7 +721,12 @@ body:has(.app) {
   font-weight: 500;
 }
 
-/* Card Principal do Usuário */
+.header-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* CARD USUÁRIO */
 .user-info-card {
   background: #fff;
   margin: 16px;
@@ -728,8 +748,7 @@ body:has(.app) {
 
 .user-text h3 {
   font-size: 18px;
-  color: var(--text-dark);
-  margin-bottom: 4px;
+  margin: 0 0 4px;
 }
 
 .user-text p {
@@ -744,7 +763,7 @@ body:has(.app) {
   gap: 6px;
   font-size: 11px;
   color: #666;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .user-meta .material-icons-outlined {
@@ -752,16 +771,9 @@ body:has(.app) {
   color: var(--primary-green);
 }
 
-/* Grid de Histórico */
+/* HISTÓRICO GRID */
 .history-section {
   padding: 0 16px;
-}
-
-.history-section h3 {
-  font-size: 16px;
-  color: var(--text-dark);
-  margin-bottom: 12px;
-  padding-left: 4px;
 }
 
 .history-grid {
@@ -772,27 +784,120 @@ body:has(.app) {
 
 .history-card {
   background: #fff;
-  padding: 15px 10px;
+  padding: 14px 8px;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
   border: 1px solid #eee;
 }
 
 .history-card .count {
-  display: block;
   font-size: 20px;
   font-weight: 700;
   color: var(--primary-green);
-  margin-bottom: 4px;
 }
 
 .history-card p {
   font-size: 10px;
   color: var(--text-light);
-  line-height: 1.2;
 }
 
-.header-content a{
-  color: white;
+/* FEED */
+.feed {
+  padding: 16px;
+}
+
+.feed-header h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.horizontal-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+}
+
+.product-card {
+  min-width: 140px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 8px;
+}
+
+.price {
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 12px;
+  color: var(--text-dark);
+}
+
+/* LOGOUT */
+.logout-section {
+  padding: 16px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #ffeaea;
+  color: #c62828;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  color: #777;
+  text-decoration: none;
+}
+
+.nav-item.active {
+  color: var(--primary-green);
+}
+
+.announce-btn {
+  background: var(--primary-green);
+  color: #fff;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
 }
